@@ -44,5 +44,6 @@
 	<classpathentry kind="lib" path="/Users/Strandberg95/Desktop/jaxrs-ri/ext/persistence-api-1.0.jar"/>
 	<classpathentry kind="lib" path="/Users/Strandberg95/Desktop/jaxrs-ri/ext/validation-api-1.1.0.Final.jar"/>
 	<classpathentry kind="lib" path="/Users/Strandberg95/Desktop/jaxrs-ri/api/javax.ws.rs-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/Strandberg95/Desktop/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
