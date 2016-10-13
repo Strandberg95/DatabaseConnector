@@ -46,7 +46,7 @@ public class Initializer {
 	
 	private final String QUERRY_INSERT_PARTY = " insert into parties (name, nameShort)"
 	        + " values (?, ?)";
-	private final String QUERRY_INSERT_POLITICIAN = " insert into politcans (name, nameShort)"
+	private final String QUERRY_INSERT_POLITICIAN = " insert into politicians (name, party)"
 	        + " values (?, ?)";
 	/**
 	 * Other
@@ -109,14 +109,22 @@ public class Initializer {
 			tempStatement.setString(1, party.getPartyName());
 			tempStatement.setString(2, party.getPartyAbbreviation());
 			tempStatement.executeUpdate();
-			System.out.println("List updated");
+			System.out.println("Party added");
 		} catch (SQLException e) {
-			System.out.println("Already in the list");
+			System.out.println("Party already in the list");
 		}
 	}
 	
 	public void updatePolitician(Connection conn, Politician politician){
-		
+		try{
+			PreparedStatement tempStatement = conn.prepareStatement(QUERRY_INSERT_POLITICIAN);
+			tempStatement.setString(1, politician.getFirstname() + " " + politician.getSurname());
+			tempStatement.setString(2, politician.getParty().getPartyAbbreviation());
+			tempStatement.executeUpdate();
+			System.out.println("Politician added to the list");
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
 	}
 	
 	private String getResponseFromRiksdagen(){
